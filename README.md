@@ -16,7 +16,7 @@
 | ---- | --------- | -------- | ------ | ------ |
 | 1    | 2023.3.26 | 이경찬   |   [SASRec](https://www.notion.so/chanrankim/SASRec-23cfd848c75143f890adc7cc17dba8a3?pvs=4)     |   [Self-Attentive Sequential Recommendation](https://arxiv.org/pdf/1808.09781.pdf)     |
 | 2    | 2023.4.2  | 박순혁   |   [NGCF](https://www.notion.so/chanrankim/NGCF-4b7770de468947b99268df3cd6bd1823?pvs=4)     |  [Neural graph collaborative filtering](https://arxiv.org/abs/1905.08108)      |
-| 3    | 2023.4.9  | 박혜리   |    FPMC    |    [Factorizing personalized markov chains for next-basket recommendation](https://dl.acm.org/doi/10.1145/1772690.1772773)    |
+| 3    | 2023.4.9  | 박혜리   |    [FPMC](https://www.notion.so/chanrankim/FPMC-27d788aa42ba408688656e93ad87c0ee?pvs=4)    |    [Factorizing personalized markov chains for next-basket recommendation](https://dl.acm.org/doi/10.1145/1772690.1772773)    |
 | 4    | 2023.4.16 | 김용직   |   GraphRec     |   [Graph neural networks for social recommendation](https://arxiv.org/abs/1902.07243)     |
 | 5    | 2023.4.23 | 미정   |        |        |
 | 6    | 2023.4.30 | 이한빈   |  PinSage      |  [Graph convolutional neural networks for web-scale recommender systems](https://arxiv.org/abs/1806.01973)      |
