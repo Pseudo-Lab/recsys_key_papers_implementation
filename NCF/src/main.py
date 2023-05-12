@@ -28,16 +28,16 @@ class NCF(nn.Module):
 		self.predict_layer = nn.Linear(predict_size, 1)
 
 	def forward(self, user, item):
-        embed_user_GMF = self.embed_user_GMF(user)
-        embed_item_GMF = self.embed_item_GMF(item)
-        output_GMF = embed_user_GMF * embed_item_GMF
+		embed_user_GMF = self.embed_user_GMF(user)
+		embed_item_GMF = self.embed_item_GMF(item)
+		output_GMF = embed_user_GMF * embed_item_GMF
 
-        embed_user_MLP = self.embed_user_MLP(user)
-        embed_item_MLP = self.embed_item_MLP(item)
-        interaction = torch.cat((embed_user_MLP, embed_item_MLP), -1)
-        output_MLP = self.MLP_layers(interaction)
+		embed_user_MLP = self.embed_user_MLP(user)
+		embed_item_MLP = self.embed_item_MLP(item)
+		interaction = torch.cat((embed_user_MLP, embed_item_MLP), -1)
+		output_MLP = self.MLP_layers(interaction)
 
-        concat = torch.cat((output_GMF, output_MLP), -1)
+		concat = torch.cat((output_GMF, output_MLP), -1)
 
 		prediction = self.predict_layer(concat)
 		return prediction.view(-1)
