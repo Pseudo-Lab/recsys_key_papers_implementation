@@ -1,0 +1,105 @@
+{
+    "os": "Linux-5.10.147+-x86_64-with-glibc2.31",
+    "python": "3.10.11",
+    "heartbeatAt": "2023-05-09T03:12:09.710115",
+    "startedAt": "2023-05-09T03:12:00.621037",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "test.ipynb",
+    "colab": "https://colab.research.google.com/notebook#fileId=1AxgHIm8dbEg2HrUptjrhbmxe8y57erZ3",
+    "git": {
+        "remote": "https://github.com/Pseudo-Lab/recsys_key_papers_implementation.git",
+        "commit": "e24fb27e7ad8f37b8a5a8843815433401878f086"
+    },
+    "email": "nahcklee@gmail.com",
+    "root": "/content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation",
+    "host": "dae7fca87b07",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2200.198,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.198,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 166.77415084838867,
+        "used": 23.459667205810547
+    },
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A100-SXM4-40GB",
+            "memory_total": 42949672960
+        }
+    ],
+    "memory": {
+        "total": 83.48343658447266
+    }
+}

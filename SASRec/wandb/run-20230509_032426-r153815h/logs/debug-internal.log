@@ -1,0 +1,461 @@
+2023-05-09 03:24:26,239 INFO    StreamThr :8276 [internal.py:wandb_internal():86] W&B internal server running at pid: 8276, started at: 2023-05-09 03:24:26.237720
+2023-05-09 03:24:26,241 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status
+2023-05-09 03:24:29,121 INFO    WriterThread:8276 [datastore.py:open_for_write():85] open: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/run-r153815h.wandb
+2023-05-09 03:24:29,125 DEBUG   SenderThread:8276 [sender.py:send():375] send: header
+2023-05-09 03:24:29,152 DEBUG   SenderThread:8276 [sender.py:send():375] send: run
+2023-05-09 03:24:29,277 INFO    SenderThread:8276 [dir_watcher.py:__init__():219] watching files in: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files
+2023-05-09 03:24:29,277 INFO    SenderThread:8276 [sender.py:_start_run_threads():1124] run started: r153815h with start time 1683602666.24001
+2023-05-09 03:24:29,277 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: summary_record
+2023-05-09 03:24:29,280 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: check_version
+2023-05-09 03:24:29,281 INFO    SenderThread:8276 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-09 03:24:29,282 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: check_version
+2023-05-09 03:24:29,401 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: run_start
+2023-05-09 03:24:29,409 DEBUG   HandlerThread:8276 [system_info.py:__init__():31] System info init
+2023-05-09 03:24:29,409 DEBUG   HandlerThread:8276 [system_info.py:__init__():46] System info init done
+2023-05-09 03:24:29,409 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:24:29,409 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:24:29,409 INFO    HandlerThread:8276 [system_monitor.py:probe():201] Collecting system info
+2023-05-09 03:24:29,410 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:24:29,411 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:24:29,412 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:24:29,412 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:24:29,413 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:24:29,423 DEBUG   HandlerThread:8276 [system_info.py:probe():195] Probing system
+2023-05-09 03:24:29,429 DEBUG   HandlerThread:8276 [system_info.py:_probe_git():180] Probing git
+2023-05-09 03:24:29,454 DEBUG   HandlerThread:8276 [system_info.py:_probe_git():188] Probing git done
+2023-05-09 03:24:29,454 DEBUG   HandlerThread:8276 [system_info.py:probe():240] Probing system done
+2023-05-09 03:24:29,454 DEBUG   HandlerThread:8276 [system_monitor.py:probe():210] {'os': 'Linux-5.10.147+-x86_64-with-glibc2.31', 'python': '3.10.11', 'heartbeatAt': '2023-05-09T03:24:29.423425', 'startedAt': '2023-05-09T03:24:26.195780', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': 'test.ipynb', 'colab': 'https://colab.research.google.com/notebook#fileId=1AxgHIm8dbEg2HrUptjrhbmxe8y57erZ3', 'git': {'remote': 'https://github.com/Pseudo-Lab/recsys_key_papers_implementation.git', 'commit': 'e24fb27e7ad8f37b8a5a8843815433401878f086'}, 'email': 'nahcklee@gmail.com', 'root': '/content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation', 'host': 'dae7fca87b07', 'username': 'root', 'executable': '/usr/bin/python3', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2200.198, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}, {'current': 2200.198, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 166.77415084838867, 'used': 23.463016510009766}, 'gpu': 'NVIDIA A100-SXM4-40GB', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-40GB', 'memory_total': 42949672960}], 'memory': {'total': 83.48343658447266}}
+2023-05-09 03:24:29,454 INFO    HandlerThread:8276 [system_monitor.py:probe():211] Finished collecting system info
+2023-05-09 03:24:29,454 INFO    HandlerThread:8276 [system_monitor.py:probe():214] Publishing system info
+2023-05-09 03:24:29,455 DEBUG   HandlerThread:8276 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-05-09 03:24:29,478 DEBUG   HandlerThread:8276 [system_info.py:_save_pip():67] Saving pip packages done
+2023-05-09 03:24:29,482 INFO    HandlerThread:8276 [system_monitor.py:probe():216] Finished publishing system info
+2023-05-09 03:24:29,487 DEBUG   SenderThread:8276 [sender.py:send():375] send: files
+2023-05-09 03:24:29,487 INFO    SenderThread:8276 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-05-09 03:24:29,505 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-09 03:24:29,506 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: stop_status
+2023-05-09 03:24:29,510 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:24:29,511 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:24:29,511 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:24:29,511 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:24:29,512 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:24:29,512 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:24:29,512 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:24:29,513 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:24:29,519 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:24:29,519 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:24:29,520 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:24:29,538 DEBUG   SenderThread:8276 [sender.py:send():375] send: telemetry
+2023-05-09 03:24:29,539 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:24:29,715 INFO    wandb-upload_0:8276 [upload_job.py:push():137] Uploaded file /tmp/tmphz7jfj6wwandb/aqa47viy-wandb-metadata.json
+2023-05-09 03:24:30,280 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_created():278] file/dir created: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/wandb-summary.json
+2023-05-09 03:24:30,281 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_created():278] file/dir created: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/wandb-metadata.json
+2023-05-09 03:24:30,281 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_created():278] file/dir created: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/requirements.txt
+2023-05-09 03:24:31,539 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:24:36,540 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:24:41,541 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:24:41,876 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:24:41,876 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:24:41,876 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:24:41,877 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:24:41,877 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:24:41,878 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:24:41,879 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:24:41,879 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:24:41,879 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:24:44,312 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_created():278] file/dir created: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:24:44,506 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-09 03:24:44,506 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: stop_status
+2023-05-09 03:24:46,642 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:24:48,321 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:24:50,326 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:24:51,890 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:24:52,331 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:24:54,335 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:24:56,341 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:24:56,896 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:24:56,896 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:24:56,896 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:24:56,896 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:24:56,897 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:24:56,897 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:24:56,897 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:24:56,898 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:24:56,904 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:24:56,904 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:24:56,905 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:24:56,905 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:24:56,909 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:24:57,343 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/config.yaml
+2023-05-09 03:24:58,345 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:24:59,505 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-09 03:24:59,506 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: stop_status
+2023-05-09 03:25:02,531 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:25:07,532 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:25:11,582 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:11,582 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:11,582 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:11,583 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:11,583 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:11,584 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:11,584 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:11,585 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:11,585 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:11,622 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:11,623 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:11,623 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:11,624 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:11,624 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:11,624 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:11,624 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:11,624 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:11,630 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:11,631 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:11,631 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:11,631 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:12,019 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:12,019 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:12,020 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:12,020 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:12,021 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:12,021 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:12,022 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:12,022 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:12,024 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:12,024 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:12,024 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:12,025 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:12,025 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:12,025 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:12,026 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:12,026 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:12,026 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:12,037 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:12,037 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:12,037 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:12,038 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:12,378 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:25:12,430 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:12,430 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:12,430 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:12,431 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:12,431 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:12,432 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:12,432 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:12,433 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:12,433 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:12,479 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:12,479 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:12,479 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:12,480 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:12,480 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:12,480 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:12,481 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:12,481 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:12,491 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:12,491 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:12,492 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:12,492 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:12,767 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:12,768 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:12,768 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:12,768 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:12,769 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:12,769 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:12,770 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:12,771 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:12,771 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:12,771 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:12,772 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:12,772 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:12,772 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:12,773 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:12,773 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:12,773 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:12,773 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:12,783 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:12,783 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:12,783 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:12,784 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:12,784 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:25:13,289 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:13,290 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:13,290 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:13,290 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:13,291 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:13,291 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:13,291 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:13,292 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:13,293 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:13,293 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:13,293 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:13,294 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:13,294 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:13,294 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:13,295 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:13,295 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:13,295 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:13,305 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:13,305 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:13,306 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:13,306 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:14,383 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:25:14,505 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-09 03:25:14,506 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: stop_status
+2023-05-09 03:25:14,616 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:14,616 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:14,616 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:14,616 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:14,617 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:14,617 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:14,618 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:14,619 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:14,620 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:14,656 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:14,656 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:14,656 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:14,657 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:14,657 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:14,657 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:14,657 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:14,658 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:14,664 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:14,664 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:14,665 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:14,665 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:16,072 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:16,072 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:16,072 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:16,072 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:16,073 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:16,073 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:16,074 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:16,074 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:16,075 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:16,075 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:16,075 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:16,076 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:16,076 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:16,076 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:16,077 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:16,077 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:16,087 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:16,087 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:16,088 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:18,089 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:25:19,377 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:19,378 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:19,378 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:19,378 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:19,379 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:19,379 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:19,380 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:19,380 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:19,380 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:19,381 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:19,381 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:19,382 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:19,382 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:19,382 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:19,383 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:19,383 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:19,384 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:19,395 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:19,395 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:19,396 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:19,396 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:21,152 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:21,152 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:21,152 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:21,152 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:21,153 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:21,154 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:21,154 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:21,155 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:21,155 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:21,155 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:21,156 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:21,156 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:21,157 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:21,157 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:21,158 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:21,158 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:21,158 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:21,168 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:21,168 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:21,168 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:21,168 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:21,169 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:21,169 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:21,169 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:21,170 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:21,170 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:21,170 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:21,170 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:21,170 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:21,171 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:21,171 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:21,171 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:21,171 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:21,172 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:21,172 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:21,172 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:21,185 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:21,186 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:23,088 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:23,089 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:23,089 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:23,089 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:23,090 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:23,090 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:23,090 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:23,091 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:23,091 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:23,091 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:23,092 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:23,093 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:23,093 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:23,093 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:23,093 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:23,094 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:23,104 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:23,104 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:23,104 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:23,105 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:25:23,780 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: pause
+2023-05-09 03:25:23,781 INFO    HandlerThread:8276 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-05-09 03:25:24,201 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: resume
+2023-05-09 03:25:24,202 INFO    HandlerThread:8276 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-05-09 03:25:24,202 INFO    HandlerThread:8276 [system_monitor.py:start():181] Starting system monitor
+2023-05-09 03:25:24,202 INFO    SystemMonitor:8276 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-09 03:25:24,203 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started cpu monitoring
+2023-05-09 03:25:24,203 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started disk monitoring
+2023-05-09 03:25:24,204 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started gpu monitoring
+2023-05-09 03:25:24,204 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started memory monitoring
+2023-05-09 03:25:24,204 INFO    SystemMonitor:8276 [interfaces.py:start():190] Started network monitoring
+2023-05-09 03:25:24,259 DEBUG   SenderThread:8276 [sender.py:send():375] send: telemetry
+2023-05-09 03:25:24,261 DEBUG   SenderThread:8276 [sender.py:send():375] send: exit
+2023-05-09 03:25:24,262 INFO    SenderThread:8276 [sender.py:send_exit():598] handling exit code: 0
+2023-05-09 03:25:24,262 INFO    SenderThread:8276 [sender.py:send_exit():600] handling runtime: 15
+2023-05-09 03:25:24,265 INFO    SenderThread:8276 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-09 03:25:24,265 INFO    SenderThread:8276 [sender.py:send_exit():606] send defer
+2023-05-09 03:25:24,266 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:24,266 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 0
+2023-05-09 03:25:24,266 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:24,266 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-05-09 03:25:24,266 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 1
+2023-05-09 03:25:24,267 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:24,267 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 1
+2023-05-09 03:25:24,267 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:24,267 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-05-09 03:25:24,267 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 2
+2023-05-09 03:25:24,267 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:24,268 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 2
+2023-05-09 03:25:24,268 INFO    HandlerThread:8276 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-09 03:25:24,268 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-09 03:25:24,268 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-09 03:25:24,268 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-09 03:25:24,269 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined disk monitor
+2023-05-09 03:25:24,269 DEBUG   SystemMonitor:8276 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-09 03:25:24,276 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-09 03:25:24,276 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined memory monitor
+2023-05-09 03:25:24,276 INFO    HandlerThread:8276 [interfaces.py:finish():202] Joined network monitor
+2023-05-09 03:25:24,277 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:24,277 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-05-09 03:25:24,277 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 3
+2023-05-09 03:25:24,277 DEBUG   SenderThread:8276 [sender.py:send():375] send: stats
+2023-05-09 03:25:24,277 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:24,278 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 3
+2023-05-09 03:25:24,278 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:24,278 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-05-09 03:25:24,278 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 4
+2023-05-09 03:25:24,278 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:24,278 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 4
+2023-05-09 03:25:24,279 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:24,279 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-05-09 03:25:24,279 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 5
+2023-05-09 03:25:24,279 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:24,279 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 5
+2023-05-09 03:25:24,280 DEBUG   SenderThread:8276 [sender.py:send():375] send: summary
+2023-05-09 03:25:24,282 INFO    SenderThread:8276 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-09 03:25:24,283 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:24,283 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-05-09 03:25:24,283 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 6
+2023-05-09 03:25:24,284 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:24,284 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 6
+2023-05-09 03:25:24,284 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:24,284 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-05-09 03:25:24,288 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: status_report
+2023-05-09 03:25:24,406 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/wandb-summary.json
+2023-05-09 03:25:25,263 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-09 03:25:28,908 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 7
+2023-05-09 03:25:28,908 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: poll_exit
+2023-05-09 03:25:28,908 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:28,909 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 7
+2023-05-09 03:25:28,909 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:28,909 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-05-09 03:25:29,418 INFO    Thread-12 :8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/config.yaml
+2023-05-09 03:25:29,913 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 8
+2023-05-09 03:25:29,914 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:29,914 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 8
+2023-05-09 03:25:29,914 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:29,915 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-05-09 03:25:29,916 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 9
+2023-05-09 03:25:29,916 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:29,917 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 9
+2023-05-09 03:25:29,917 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:29,917 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-05-09 03:25:29,917 INFO    SenderThread:8276 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-05-09 03:25:30,271 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-09 03:25:30,423 INFO    SenderThread:8276 [dir_watcher.py:_on_file_modified():295] file/dir modified: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:25:30,423 INFO    SenderThread:8276 [dir_watcher.py:finish():395] scan: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files
+2023-05-09 03:25:30,424 INFO    SenderThread:8276 [dir_watcher.py:finish():409] scan save: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/config.yaml config.yaml
+2023-05-09 03:25:30,425 INFO    SenderThread:8276 [dir_watcher.py:finish():409] scan save: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/wandb-summary.json wandb-summary.json
+2023-05-09 03:25:30,428 INFO    SenderThread:8276 [dir_watcher.py:finish():409] scan save: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/requirements.txt requirements.txt
+2023-05-09 03:25:30,431 INFO    SenderThread:8276 [dir_watcher.py:finish():409] scan save: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/wandb-metadata.json wandb-metadata.json
+2023-05-09 03:25:30,431 INFO    SenderThread:8276 [dir_watcher.py:finish():409] scan save: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log output.log
+2023-05-09 03:25:30,434 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 10
+2023-05-09 03:25:30,434 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:30,436 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 10
+2023-05-09 03:25:30,437 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:30,437 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-05-09 03:25:30,438 INFO    SenderThread:8276 [file_pusher.py:finish():167] shutting down file pusher
+2023-05-09 03:25:30,852 INFO    wandb-upload_1:8276 [upload_job.py:push():137] Uploaded file /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/wandb-summary.json
+2023-05-09 03:25:30,854 INFO    wandb-upload_3:8276 [upload_job.py:push():137] Uploaded file /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/output.log
+2023-05-09 03:25:30,880 INFO    wandb-upload_0:8276 [upload_job.py:push():137] Uploaded file /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/config.yaml
+2023-05-09 03:25:30,936 INFO    wandb-upload_2:8276 [upload_job.py:push():137] Uploaded file /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/files/requirements.txt
+2023-05-09 03:25:31,136 INFO    Thread-11 (_thread_body):8276 [sender.py:transition_state():626] send defer: 11
+2023-05-09 03:25:31,137 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:31,137 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 11
+2023-05-09 03:25:31,138 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:31,138 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-05-09 03:25:31,138 INFO    SenderThread:8276 [file_pusher.py:join():172] waiting for file pusher
+2023-05-09 03:25:31,138 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 12
+2023-05-09 03:25:31,138 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:31,138 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 12
+2023-05-09 03:25:31,139 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:31,139 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-05-09 03:25:31,483 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 13
+2023-05-09 03:25:31,483 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:31,484 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 13
+2023-05-09 03:25:31,484 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:31,484 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-05-09 03:25:31,484 INFO    SenderThread:8276 [sender.py:transition_state():626] send defer: 14
+2023-05-09 03:25:31,485 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: defer
+2023-05-09 03:25:31,485 DEBUG   SenderThread:8276 [sender.py:send():375] send: final
+2023-05-09 03:25:31,485 INFO    HandlerThread:8276 [handler.py:handle_request_defer():170] handle defer: 14
+2023-05-09 03:25:31,485 DEBUG   SenderThread:8276 [sender.py:send():375] send: footer
+2023-05-09 03:25:31,485 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: defer
+2023-05-09 03:25:31,485 INFO    SenderThread:8276 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-05-09 03:25:31,486 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-09 03:25:31,487 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: server_info
+2023-05-09 03:25:31,487 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: get_summary
+2023-05-09 03:25:31,487 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: sampled_history
+2023-05-09 03:25:31,487 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: poll_exit
+2023-05-09 03:25:31,488 DEBUG   SenderThread:8276 [sender.py:send_request():402] send_request: server_info
+2023-05-09 03:25:31,578 DEBUG   HandlerThread:8276 [handler.py:handle_request():144] handle_request: shutdown
+2023-05-09 03:25:31,579 INFO    HandlerThread:8276 [handler.py:finish():845] shutting down handler
+2023-05-09 03:25:32,487 INFO    WriterThread:8276 [datastore.py:close():298] close: /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_032426-r153815h/run-r153815h.wandb
+2023-05-09 03:25:32,577 INFO    SenderThread:8276 [sender.py:finish():1550] shutting down sender
+2023-05-09 03:25:32,578 INFO    SenderThread:8276 [file_pusher.py:finish():167] shutting down file pusher
+2023-05-09 03:25:32,578 INFO    SenderThread:8276 [file_pusher.py:join():172] waiting for file pusher

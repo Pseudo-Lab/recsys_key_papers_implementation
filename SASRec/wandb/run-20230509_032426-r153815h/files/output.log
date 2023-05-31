@@ -1,0 +1,12 @@
+
+
+
+
+
+
+
+Evaluating.......................................len(user_train) : 6040
+args.batch_size : 128
+num_batch : 47
+average sequence length : 163.50
+logging 위치 : ../data/ml-1m/ml-1m.txt_default/log.txt

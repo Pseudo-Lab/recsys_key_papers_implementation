@@ -1,0 +1,70 @@
+wandb_version: 1
+
+dataset:
+  desc: null
+  value: ../data/ml-1m/ml-1m.txt
+train_dir:
+  desc: null
+  value: default
+batch_size:
+  desc: null
+  value: 128
+lr:
+  desc: null
+  value: 0.001
+maxlen:
+  desc: null
+  value: 50
+hidden_units:
+  desc: null
+  value: 50
+num_blocks:
+  desc: null
+  value: 2
+num_epochs:
+  desc: null
+  value: 201
+num_heads:
+  desc: null
+  value: 1
+dropout_rate:
+  desc: null
+  value: 0.5
+l2_emb:
+  desc: null
+  value: 0.0
+device:
+  desc: null
+  value: cpu
+inference_only:
+  desc: null
+  value: false
+state_dict_path:
+  desc: null
+  value: null
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.11
+    cli_version: 0.15.2
+    framework: torch
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    start_time: 1683601920.670253
+    t:
+      1:
+      - 1
+      - 55
+      2:
+      - 1
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.10.11
+      5: 0.15.2
+      8:
+      - 1
+      - 5
+      - 12

@@ -1,0 +1,33 @@
+2023-05-09 03:12:00,654 INFO    MainThread:1410 [wandb_setup.py:_flush():76] Current SDK version is 0.15.2
+2023-05-09 03:12:00,655 INFO    MainThread:1410 [wandb_setup.py:_flush():76] Configure stats pid to 1410
+2023-05-09 03:12:00,655 INFO    MainThread:1410 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2023-05-09 03:12:00,655 INFO    MainThread:1410 [wandb_setup.py:_flush():76] Loading settings from /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/settings
+2023-05-09 03:12:00,655 INFO    MainThread:1410 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-05-09 03:12:00,655 INFO    MainThread:1410 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-05-09 03:12:00,655 INFO    MainThread:1410 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-05-09 03:12:00,656 INFO    MainThread:1410 [wandb_init.py:_log_setup():507] Logging user logs to /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_031200-uo959zyj/logs/debug.log
+2023-05-09 03:12:00,657 INFO    MainThread:1410 [wandb_init.py:_log_setup():508] Logging internal logs to /content/drive/MyDrive/000GithubRepos/000recsys_key_papers_implementation/SASRec/wandb/run-20230509_031200-uo959zyj/logs/debug-internal.log
+2023-05-09 03:12:00,657 INFO    MainThread:1410 [wandb_init.py:_jupyter_setup():453] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7f931c78a4a0>
+2023-05-09 03:12:00,657 INFO    MainThread:1410 [wandb_init.py:init():547] calling init triggers
+2023-05-09 03:12:00,657 INFO    MainThread:1410 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'dataset': '../data/ml-1m/ml-1m.txt', 'train_dir': 'default', 'batch_size': 128, 'lr': 0.001, 'maxlen': 50, 'hidden_units': 50, 'num_blocks': 2, 'num_epochs': 201, 'num_heads': 1, 'dropout_rate': 0.5, 'l2_emb': 0.0, 'device': 'cpu', 'inference_only': False, 'state_dict_path': None}
+2023-05-09 03:12:00,658 INFO    MainThread:1410 [wandb_init.py:init():596] starting backend
+2023-05-09 03:12:00,658 INFO    MainThread:1410 [wandb_init.py:init():600] setting up manager
+2023-05-09 03:12:00,663 INFO    MainThread:1410 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-05-09 03:12:00,669 INFO    MainThread:1410 [wandb_init.py:init():606] backend started and connected
+2023-05-09 03:12:00,676 INFO    MainThread:1410 [wandb_run.py:_label_probe_notebook():1238] probe notebook
+2023-05-09 03:12:03,469 INFO    MainThread:1410 [wandb_init.py:init():700] updated telemetry
+2023-05-09 03:12:09,438 INFO    MainThread:1410 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2023-05-09 03:12:09,605 INFO    MainThread:1410 [wandb_run.py:_on_init():2177] communicating current version
+2023-05-09 03:12:09,675 INFO    MainThread:1410 [wandb_run.py:_on_init():2186] got version response 
+2023-05-09 03:12:09,675 INFO    MainThread:1410 [wandb_init.py:init():787] starting run threads in backend
+2023-05-09 03:12:09,799 INFO    MainThread:1410 [wandb_run.py:_console_start():2158] atexit reg
+2023-05-09 03:12:09,800 INFO    MainThread:1410 [wandb_run.py:_redirect():2013] redirect: SettingsConsole.WRAP_RAW
+2023-05-09 03:12:09,800 INFO    MainThread:1410 [wandb_run.py:_redirect():2078] Wrapping output streams.
+2023-05-09 03:12:09,800 INFO    MainThread:1410 [wandb_run.py:_redirect():2103] Redirects installed.
+2023-05-09 03:12:09,801 INFO    MainThread:1410 [wandb_init.py:init():829] run started, returning control to user process
+2023-05-09 03:12:09,805 INFO    MainThread:1410 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-05-09 03:12:09,805 INFO    MainThread:1410 [wandb_init.py:_pause_backend():418] pausing backend
+2023-05-09 03:19:36,359 INFO    MainThread:1410 [wandb_init.py:_resume_backend():423] resuming backend
+2023-05-09 03:20:34,417 INFO    MainThread:1410 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-05-09 03:20:34,418 INFO    MainThread:1410 [wandb_init.py:_pause_backend():418] pausing backend
