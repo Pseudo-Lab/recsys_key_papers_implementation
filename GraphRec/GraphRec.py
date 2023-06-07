@@ -63,6 +63,7 @@ def test(model, device, test_loader):
 def main():
     # Training settings
     parser = argparse.ArgumentParser(description='Social Recommendation: GraphRec model')
+    parser.add_argument('--data_name', type=str, default='./data/toy_dataset', help='file name of pickle data')
     parser.add_argument('--batch_size', type=int, default=128, metavar='N', help='input batch size for training')
     parser.add_argument('--embed_dim', type=int, default=64, metavar='N', help='embedding size')
     parser.add_argument('--lr', type=float, default=0.001, metavar='LR', help='learning rate')
@@ -77,7 +78,7 @@ def main():
     device = torch.device("cuda" if use_cuda else "cpu")
 
     embed_dim = args.embed_dim
-    dir_data = './data/toy_dataset'
+    dir_data = args.data_name
 
     path_data = dir_data + ".pickle"
     data_file = open(path_data, 'rb')
