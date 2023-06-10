@@ -30,33 +30,43 @@ def compact_and_copy(frontier, seeds):
     return block
 
 
+
 class ItemToItemBatchSampler(IterableDataset):
     def __init__(self, g, user_type, item_type, batch_size):
-        self.g = g
-        self.user_type = user_type
-        self.item_type = item_type
+        # Initialize the instance variables.
+        self.g = g  # The user-item graph
+        self.user_type = user_type  # The type of user nodes in the graph
+        self.item_type = item_type  # The type of item nodes in the graph
+        # Extract the type of edges from user to item and item to user from the metagraph of g.
         self.user_to_item_etype = list(g.metagraph()[user_type][item_type])[0]
         self.item_to_user_etype = list(g.metagraph()[item_type][user_type])[0]
-        self.batch_size = batch_size
+        self.batch_size = batch_size  # The size of batches to be generated
 
     def __iter__(self):
+        # This method makes this class an iterable.
         while True:
-            heads = torch.randint(
-                0, self.g.num_nodes(self.item_type), (self.batch_size,)
-            )
+            # Select random item nodes as the start of the path.
+            heads = torch.randint(0, self.g.num_nodes(self.item_type), (self.batch_size,))
+
+            # Perform a two-step random walk following the metapath [Item, User, Item].
+            # The first step goes from an item to a user, and the second step goes from the user to another item.
+            # This generates the target item nodes for the given start item nodes.
             tails = dgl.sampling.random_walk(
                 self.g,
                 heads,
                 metapath=[self.item_to_user_etype, self.user_to_item_etype],
             )[0][:, 2]
-            neg_tails = torch.randint(
-                0, self.g.num_nodes(self.item_type), (self.batch_size,)
-            )
 
+            # Select random item nodes as negative samples.
+            neg_tails = torch.randint(0, self.g.num_nodes(self.item_type), (self.batch_size,))
+
+            # Create a mask for valid target nodes (i.e., target nodes that are not -1).
             mask = tails != -1
+
+            # Yield the start nodes, target nodes, and negative nodes that pass the mask.
             yield heads[mask], tails[mask], neg_tails[mask]
 
-
+            
 class NeighborSampler(object):
     def __init__(
         self,
@@ -69,11 +79,15 @@ class NeighborSampler(object):
         num_neighbors,
         num_layers,
     ):
-        self.g = g
-        self.user_type = user_type
-        self.item_type = item_type
+        # Initialize the instance variables
+        self.g = g  # The user-item graph
+        self.user_type = user_type  # The type of user nodes in the graph
+        self.item_type = item_type  # The type of item nodes in the graph
+        # Extract the type of edges from user to item and item to user from the metagraph of g
         self.user_to_item_etype = list(g.metagraph()[user_type][item_type])[0]
         self.item_to_user_etype = list(g.metagraph()[item_type][user_type])[0]
+
+        # Create a list of PinSAGE samplers for random walk-based neighbor sampling
         self.samplers = [
             dgl.sampling.PinSAGESampler(
                 g,
@@ -88,41 +102,61 @@ class NeighborSampler(object):
         ]
 
     def sample_blocks(self, seeds, heads=None, tails=None, neg_tails=None):
+        # Initialize the list to hold the sampled blocks
         blocks = []
+
+        # Iterate over all samplers
         for sampler in self.samplers:
+            # Generate a frontier by sampling neighbors of seeds
             frontier = sampler(seeds)
+
+            # If head, tail, and neg_tails are provided
             if heads is not None:
+                # Find the edge IDs between heads and tails/neg_tails
                 eids = frontier.edge_ids(
                     torch.cat([heads, heads]),
                     torch.cat([tails, neg_tails]),
                     return_uv=True,
                 )[2]
+                # If any edges are found
                 if len(eids) > 0:
+                    # Remove these edges from the frontier
                     old_frontier = frontier
                     frontier = dgl.remove_edges(old_frontier, eids)
-                    # print(old_frontier)
-                    # print(frontier)
-                    # print(frontier.edata['weights'])
-                    # frontier.edata['weights'] = old_frontier.edata['weights'][frontier.edata[dgl.EID]]
+
+            # Compact the frontier graph and make a block
             block = compact_and_copy(frontier, seeds)
+
+            # The destination nodes of the block will be used as the seeds for next layer
             seeds = block.srcdata[dgl.NID]
+
+            # Add the block to the front of the list
             blocks.insert(0, block)
+
+        # Return the list of blocks
         return blocks
 
     def sample_from_item_pairs(self, heads, tails, neg_tails):
-        # Create a graph with positive connections only and another graph with negative
-        # connections only.
+        # Create a graph with positive connections only and another graph with negative connections only.
         pos_graph = dgl.graph(
             (heads, tails), num_nodes=self.g.num_nodes(self.item_type)
         )
         neg_graph = dgl.graph(
             (heads, neg_tails), num_nodes=self.g.num_nodes(self.item_type)
         )
+
+        # Compact the graphs so that they share the same set of nodes
         pos_graph, neg_graph = dgl.compact_graphs([pos_graph, neg_graph])
+
+        # Use the nodes of the positive graph as the seeds
         seeds = pos_graph.ndata[dgl.NID]
 
+        # Sample blocks using the seeds, heads, tails, and neg_tails
         blocks = self.sample_blocks(seeds, heads, tails, neg_tails)
+
+        # Return the positive graph, the negative graph, and the list of blocks
         return pos_graph, neg_graph, blocks
+
 
 
 def assign_simple_node_features(ndata, g, ntype, assign_id=False):
@@ -193,26 +227,37 @@ def assign_features_to_blocks(blocks, g, textset, ntype):
     assign_simple_node_features(blocks[-1].dstdata, g, ntype)
     assign_textual_node_features(blocks[-1].dstdata, textset, ntype)
 
-
+    
 class PinSAGECollator(object):
     def __init__(self, sampler, g, ntype, textset):
-        self.sampler = sampler
-        self.ntype = ntype
-        self.g = g
-        self.textset = textset
+        # Initialize the instance variables.
+        self.sampler = sampler  # The neighborhood sampler
+        self.ntype = ntype  # The type of nodes in the graph
+        self.g = g  # The user-item graph
+        self.textset = textset  # The dataset containing the text features of the nodes
 
     def collate_train(self, batches):
+        # Extract the start nodes (heads), target nodes (tails), and negative nodes (neg_tails) from the batch.
         heads, tails, neg_tails = batches[0]
-        # Construct multilayer neighborhood via PinSAGE...
-        pos_graph, neg_graph, blocks = self.sampler.sample_from_item_pairs(
-            heads, tails, neg_tails
-        )
+        
+        # Construct multilayer neighborhood using PinSAGE sampler and generate positive and negative graphs, and blocks.
+        pos_graph, neg_graph, blocks = self.sampler.sample_from_item_pairs(heads, tails, neg_tails)
+        
+        # Assign features to the nodes in the blocks.
         assign_features_to_blocks(blocks, self.g, self.textset, self.ntype)
-
+        
+        # Return the positive graph, negative graph, and blocks for training.
         return pos_graph, neg_graph, blocks
 
     def collate_test(self, samples):
+        # Convert the samples into a tensor.
         batch = torch.LongTensor(samples)
+        
+        # Sample blocks for the nodes in the batch.
         blocks = self.sampler.sample_blocks(batch)
+        
+        # Assign features to the nodes in the blocks.
         assign_features_to_blocks(blocks, self.g, self.textset, self.ntype)
+        
+        # Return the blocks for testing.
         return blocks
