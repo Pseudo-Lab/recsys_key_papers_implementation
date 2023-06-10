@@ -6,8 +6,15 @@ import numpy as np
 from collections import defaultdict
 from multiprocessing import Process, Queue
 
+
 # sampler for batch generation
 def random_neq(l, r, s):
+    '''
+    :param l: left
+    :param r: right
+    :param s: positive items
+    :return:
+    '''
     t = np.random.randint(l, r)
     while t in s:
         t = np.random.randint(l, r)
@@ -16,26 +23,28 @@ def random_neq(l, r, s):
 
 def sample_function(user_train, usernum, itemnum, batch_size, maxlen, result_queue, SEED):
     def sample():
-
         user = np.random.randint(1, usernum + 1)
-        while len(user_train[user]) <= 1: user = np.random.randint(1, usernum + 1)
+        while len(user_train[user]) <= 1:
+            user = np.random.randint(1, usernum + 1)
 
+        # ex : user_train[user] = [1, 2, 3, 4, 5], max_len = 50
         seq = np.zeros([maxlen], dtype=np.int32)
         pos = np.zeros([maxlen], dtype=np.int32)
         neg = np.zeros([maxlen], dtype=np.int32)
-        nxt = user_train[user][-1]
-        idx = maxlen - 1
+        nxt = user_train[user][-1]  # 마지막 아이템부터 시작 ex) 5
+        idx = maxlen - 1  # 끝자리
 
-        ts = set(user_train[user])
-        for i in reversed(user_train[user][:-1]):
-            seq[idx] = i
-            pos[idx] = nxt
-            if nxt != 0: neg[idx] = random_neq(1, itemnum + 1, ts)
-            nxt = i
-            idx -= 1
-            if idx == -1: break
-
-        return (user, seq, pos, neg)
+        ts = set(user_train[user])  # True items. =positive items
+        for i in reversed(user_train[user][:-1]):  # 마지막 아이템 빼고 거꾸로 돌면서
+            seq[idx] = i  # 맨 뒤부터 채움 ex) seq : [0, 0, ..45개 0.., 0, 0, 4]
+            pos[idx] = nxt  # 마지막 아이템을 맨 뒤부터 채움 pos : [0, 0, ..45개 0.., 0, 5]
+            if nxt != 0:
+                neg[idx] = random_neq(1, itemnum + 1, ts)  # neg : [0, 0, ..45개 0.., 0, 2832]
+            nxt = i  # nxt : 4
+            idx -= 1  # idx : 48
+            if idx == -1:
+                break
+        return (user, seq, pos, neg)  # seq : [0, 0, ..., 0, 0, 1, 2, 3, 4] -> 길이 50
 
     np.random.seed(SEED)
     while True:
@@ -104,6 +113,7 @@ def data_partition(fname):
             user_test[user].append(User[user][-1])
     return [user_train, user_valid, user_test, usernum, itemnum]
 
+
 # TODO: merge evaluate functions for test and val set
 # evaluate on test set
 def evaluate(model, dataset, args):
@@ -113,7 +123,7 @@ def evaluate(model, dataset, args):
     HT = 0.0
     valid_user = 0.0
 
-    if usernum>10000:
+    if usernum > 10000:
         users = random.sample(range(1, usernum + 1), 10000)
     else:
         users = range(1, usernum + 1)
@@ -138,7 +148,7 @@ def evaluate(model, dataset, args):
             item_idx.append(t)
 
         predictions = -model.predict(*[np.array(l) for l in [[u], [seq], item_idx]])
-        predictions = predictions[0] # - for 1st argsort DESC
+        predictions = predictions[0]  # - for 1st argsort DESC
 
         rank = predictions.argsort().argsort()[0].item()
 
@@ -161,7 +171,7 @@ def evaluate_valid(model, dataset, args):
     NDCG = 0.0
     valid_user = 0.0
     HT = 0.0
-    if usernum>10000:
+    if usernum > 10000:
         users = random.sample(range(1, usernum + 1), 10000)
     else:
         users = range(1, usernum + 1)
