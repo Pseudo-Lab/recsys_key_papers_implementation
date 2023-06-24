@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 
-from attention import MultiHeadAttention
-from utils import PositionwiseFeedForward
+from .attention import MultiHeadAttention
+from .utils import PositionwiseFeedForward
 
 class EncoderBlock(nn.Module):
     def __init__(self, d_model, num_heads, ff_hidden, dropout):
@@ -24,14 +24,7 @@ class EncoderBlock(nn.Module):
         self.dropout2 = nn.Dropout(dropout)
         
     def forward(self, x, mask):
-        attention = self.attention(
-            {
-                "query" : x, 
-                "key" : x,
-                "value" : x,
-                "mask" : mask
-            }
-        )
+        attention = self.attention(query=x, key=x, value=x, mask=mask)
         
         # droput + residual and norm 1
         attention = self.dropout1(attention)

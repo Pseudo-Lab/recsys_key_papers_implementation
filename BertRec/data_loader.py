@@ -2,86 +2,116 @@ import torch
 import torch.nn as nn
 import pandas as pd
 import random
+import numpy as np
 
 from torch.utils.data import Dataset
 
-PAD = 0
-MASK = 1
+class BertTrainDataset(Dataset):
+    def __init__(self, u2seq, max_len, mask_prob, mask_token, num_items, rng):
+        self.u2seq = u2seq
+        self.users = sorted(self.u2seq.keys())
+        self.max_len = max_len
+        self.mask_prob = mask_prob
+        self.mask_token = mask_token
+        self.num_items = num_items
+        self.rng = rng
 
-class Bert4RecDataset(Dataset):
-    def __init__(self, data_csv, group_by_col, split_mode, train_history, valid_history, data_col) -> None:
-        super().__init__()
-        self.data_csv = data_csv
-        self.group_by_col = group_by_col
-        self.split_mode = split_mode
-        self.train_history = train_history
-        self.valid_history = valid_history
-        self.data_col = data_col
-        
-        self.groups_df = self.data_csv.groupby(by=self.group_by_col)
-        self.groups = list(self.groups_df.groups)
-        
-    def __getitem__(self, index):
-        group = self.groups[index]
-        group_df = self.groups_df.get_group(group)
-        sequnece = self.get_sequence(group_df)
-        
-        trg_items = sequnece[self.data_col].tolist()
-        
-        if self.split_mode == "train":
-            src_items = self.mask_seqeunce(trg_items)
-        else:
-            src_items = self.mask_last_elements_sequence(trg_items)
-        
-        trg_items = self.pad_sequence(trg_items)
-        src_items = self.pad_sequence(src_items)
-        
-        trg_mask = [ 1 if t != PAD else 0 for t in trg_items]
-        src_mask = [ 1 if t != PAD else 0 for t in src_items]
-        
-        src_items = torch.tensor(src_items, dtype=torch.long)
-        trg_items = torch.tensor(trg_items, dtype=torch.long)
-        src_mask = torch.tensor(src_mask, dtype=torch.long)
-        trg_mask = torch.tensor(trg_mask, dtype=torch.long)
-        
-        return {
-            "source": src_items,
-            "target": trg_items,
-            "source_mask": src_mask,
-            "target_mask": trg_mask
-        }
-    
     def __len__(self):
-        return len(self.groups)
-    
-    def get_sequence(self, group_df: pd.DataFrame):
-        if self.split_mode == "train":
-            _ = group_df.shape[0] - self.valid_history
-            end_idx = random.randint(10, _ if _ >= 10 else 10)
-        else:
-            end_idx = group_df.shape[0]
-        
-        start_idx = max(0, end_idx - self.train_history)
-        
-        sequnece = group_df[start_idx:end_idx]
-        
-        return sequnece
-    
-    def mask_seqeunce(self, sequence: list, p: float = 0.8):
-        return [ s if random.random() < p else MASK for s in sequence]
-    
-    def mask_last_elements_sequence(self, sequence):
-        return sequence[:-self.valid_history] + self.mask_seqeunce(sequence[-self.valid_history:], 0.5)
-    
-    def pad_sequence(self, token: list):
-        if len(token) < self.train_history:
-            token = token + [PAD] * (self.train_history - len(token))
-        return token
-    
+        return len(self.users)
+
+    def __getitem__(self, index):
+        user = self.users[index]
+        seq = self._getseq(user)
+
+        tokens = []
+        labels = []
+        for s in seq:
+            prob = self.rng.random()
+            if prob < self.mask_prob:
+                prob /= self.mask_prob
+
+                if prob < 0.8:
+                    tokens.append(self.mask_token)
+                elif prob < 0.9:
+                    tokens.append(self.rng.randint(1, self.num_items))
+                else:
+                    tokens.append(s)
+
+                labels.append(s)
+            else:
+                tokens.append(s)
+                labels.append(0)
+
+        tokens = tokens[-self.max_len:]
+        labels = labels[-self.max_len:]
+
+        mask_len = self.max_len - len(tokens)
+
+        tokens = [0] * mask_len + tokens
+        labels = [0] * mask_len + labels
+
+        return torch.LongTensor(tokens), torch.LongTensor(labels)
+
+    def _getseq(self, user):
+        return self.u2seq[user]
+
+class BertEvalDataset(Dataset):
+    def __init__(self, u2seq, u2answer, max_len, mask_token):
+        self.u2seq = u2seq
+        self.users = sorted(self.u2seq.keys())
+        self.u2answer = u2answer
+        self.max_len = max_len
+        self.mask_token = mask_token
+        # self.negative_samples = negative_samples
+
+    def __len__(self):
+        return len(self.users)
+
+    def __getitem__(self, index):
+        user = self.users[index]
+        seq = self.u2seq[user]
+        answer = self.u2answer[user]
+        # negs = self.negative_samples[user]
+
+        candidates = answer # + negs
+        labels = [1] * len(answer) + [0] * len(negs)
+
+        seq = seq + [self.mask_token]
+        seq = seq[-self.max_len:]
+        padding_len = self.max_len - len(seq)
+        seq = [0] * padding_len + seq
+
+        return torch.LongTensor(seq), torch.LongTensor(candidates), torch.LongTensor(labels)
+
 if __name__ == "__main__":
-    
+    import random
+
     df = pd.read_csv("../data/ml-1m/ml-1m.txt", sep=" ")
     df.columns = ["userId", "movieId"]
     
-    dataset = Bert4RecDataset(df, "userId", "train", 120, 5, "movieId")
+    user_ids = df['userId'].unique()
+    movie_ids = df['movieId'].unique()
+
+    movieIdMapping = {k:i+2 for i, k in enumerate(df.movieId.unique())}
+    inverseMovieIdMapping = {v:k for k, v in movieIdMapping.items()}
+
+    df.movieId = df.movieId.map(movieIdMapping)
+
+
+    user_group = df.groupby(by="userId").agg(list)
+    
+    train, val, test = {}, {}, {}
+
+    for user in user_ids:
+        items = user_group['movieId'][user]
+        train[user], val[user], test[user] = items[:-2], items[-2:-1], items[-1:]       
+
+    max_len = 100
+    mask_prob = 0.1
+    rng = random.Random(777)
+    item_count = len(movieIdMapping)
+    mask_token = item_count + 1
+
+    dataset = BertTrainDataset(train, max_len, mask_prob, mask_token, item_count, rng)
+
     print(dataset.__getitem__(1))

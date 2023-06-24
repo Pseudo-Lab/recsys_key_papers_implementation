@@ -43,9 +43,16 @@ class MultiHeadAttention(nn.Module):
         
     def forward(self, query, key, value, mask=None):
         batch_size = query.size(0)
-        
+        print(self.d_k, self.num_heads)
+        print(query.size())
         # 모델의 차원에서 배치 단위로 모든 선형 투영을 수행 => num_heads x d_k
-        q = self.q_linear(query).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
+        # q = self.q_linear(query).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
+        q = self.q_linear(query)
+        print(q.size())
+        q = q.view(batch_size, -1, self.num_heads, self.d_k)
+        print(q.size())
+        q = q.transpose(1, 2)
+        print(q.size())
         k = self.k_linear(key).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
         v = self.v_linear(value).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
         

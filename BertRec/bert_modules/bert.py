@@ -1,20 +1,14 @@
 import torch
 import torch.nn as nn
 
-from embedding import BERTembedding
-from encoder import EncoderBlock
+from .embedding import BERTembedding
+from .encoder import EncoderBlock
 
-class BERT(nn.Module):
-    def __init__(self, args):
+class BERT4Rec(nn.Module):
+    def __init__(self, max_len, num_items, n_layers, num_heads, hidden, dropout):
         super().__init__()
         
-        max_len = args.max_len
-        num_items = args.num_items
-        n_layers = args.num_blocks
-        num_heads = args.num_heads
-        vocab_size = num_items + 2
-        hidden = args.hidden_unit
-        dropout = args.dropout
+        vocab_size = num_items + 1
         
         self.hidden = hidden
 
