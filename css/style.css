@@ -1,0 +1,235 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+
+/* reset */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+body {
+	background: #efefef;
+}
+
+header {
+	width: 400px;
+	height: 100%;
+	background: linear-gradient(45deg, aqua, royalblue);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	transition: 0.5s;
+}
+header h1 {
+	font: bold 50px/1 "orbitron";
+	color: #fff;
+	letter-spacing: 1px;
+	position: absolute;
+	left: 50px;
+	top: 50%;
+	transform: translateY(-150%);
+}
+header h1::after {
+	content: "";
+	display: block;
+	width: 150px;
+	height: 2px;
+	background: #fff;
+	margin-top: 20px;
+}
+header h1::before {
+	content: "UI/UX DEVELOPMENT";
+	display: block;
+	font: 14px/1 "orbitron";
+	color: #fff;
+	letter-spacing: 2px;
+	position: absolute;
+	left: 0px;
+	top: 140px;
+	opacity: 0.8;
+}
+header ul {
+	position: absolute;
+	left: 40px;
+	bottom: 100px;
+}
+header ul li {
+	float: left;
+	margin-right: 10px;
+}
+header ul li a {
+	font-size: 20px;
+	color: #fff;
+}
+header ul li a span {
+	display: inline-block;
+	font-weight: bold;
+	opacity: 0.7;
+	transform: scale(0.7) translateX(-10px);
+}
+
+main {
+	margin-left: 400px;
+	box-sizing: border-box;
+	padding: 20px;
+}
+main ul {
+	width: 100%;
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+main ul::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+main ul li {
+	float: right;
+	margin-right: 20px;
+	width: 100px;
+	height: 26px;
+}
+main ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font: bold 7px/26px "orbitron";
+	color: #aaa;
+	letter-spacing: 1px;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+	background: #fff;
+}
+main ul li.on a {
+	background: linear-gradient(45deg, #67faf3, #58abf8);
+	box-shadow: 0px 5px 20px rgba(0, 255, 255, 0.527);
+	color: #fff;
+}
+main section {
+	width: 100%;
+}
+main section::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+main section article {
+	width: 20%;
+	float: left;
+	box-sizing: border-box;
+	padding: 12px;
+}
+main section article div {
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	padding: 14px;
+}
+main section article div img {
+	width: 100%;
+}
+main section article div h2 {
+	margin-top: 15px;
+	font: bold 11px/1 "orbitron";
+	letter-spacing: 1px;
+	color: #444;
+	margin-bottom: 5px;
+}
+main section article div p {
+	font: 10px/1.2 "arial";
+	color: #777;
+	margin-bottom: 15px;
+}
+@media screen and (max-width: 1599px) {
+	header {
+		width: 350px;
+	}
+	main {
+		margin-left: 350px;
+	}
+	main section article {
+		width: 25%;
+	}
+}
+@media screen and (max-width: 1199px) {
+	header {
+		width: 100%;
+		height: 80px;
+		position: relative;
+	}
+	header h1 {
+		font: bold 24px/1 "orbitron";
+		transform: translateY(-50%);
+	}
+	header h1::before,
+	header h1::after {
+		display: none;
+	}
+	header ul {
+		left: 83%;
+		bottom: 25px;
+	}
+	header ul li {
+		margin-right: 20px;
+	}
+	header ul li a {
+		font-size: 20px;
+	}
+	header ul li a span {
+		display: none;
+	}
+	main {
+		width: 100%;
+		margin-left: 0px;
+	}
+	main section article {
+		width: 25%;
+	}
+}
+@media screen and (max-width: 899px) {
+	header ul {
+		left: 80%;
+	}
+	main section article {
+		width: 33.333%;
+	}
+}
+@media screen and (max-width: 679px) {
+	header ul {
+		left: 70%;
+	}
+	main section article {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 539px) {
+	header ul {
+		display: none;
+	}
+	main ul {
+		margin-right: 0px;
+		box-sizing: border-box;
+		padding: 0px 13px;
+	}
+	main ul li {
+		margin-right: 2%;
+		width: 32%;
+	}
+	main ul li:nth-of-type(1) {
+		margin-right: 0%;
+	}
+	main section article {
+		width: 100%;
+	}
+}

@@ -157,7 +157,7 @@ def evaluate(model, dataset, args):
         if rank < 10:
             NDCG += 1 / np.log2(rank + 2)
             HT += 1
-        if valid_user % 100 == 0:
+        if valid_user % 1000 == 0:
             print('.', end="")
             sys.stdout.flush()
 
