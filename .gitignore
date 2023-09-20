@@ -2,3 +2,10 @@
 __pycache__/
 *_default/
 .idea
+
+SASRec/sasrec_model/*
+SASRec/wandb/*
+
+venv/
+
+*/.ipynb_checkpoints

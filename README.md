@@ -27,7 +27,7 @@
 | 11  | 2023.6.4  | 이남준                 | [SR-GNN](https://www.notion.so/chanrankim/SR-GNN-6ffa6e246e1849e585ed88521733d809?pvs=4)                                                           | [Session-based Recommendation with Graph Neural Networks](https://arxiv.org/abs/1811.00855)                                         |
 | 12  | 2023.6.11 | 이한빈, 이권동, 박지원  | 공동발표([Recommender Systems: A Primer](https://arxiv.org/abs/2302.02579))                                                                            | [추천시스템 survey paper & 기본다지기 3](https://www.notion.so/chanrankim/3-a23b0a4dc541454d851b7082de0086e0?pvs=4)                                                                                                    |
 | 13  | 2023.6.18 | 남궁민상                | [KPRN](https://www.notion.so/chanrankim/KPRN-c6ea655e688f49f29482869111dd95b4?pvs=4)                                                               | [Explainable reasoning over knowledge graphs for recommendation](https://arxiv.org/abs/1905.08108)                                  |
-| 14  | 2023.6.25 | 이권동                 | BERT4Rec                                                                                                                                           | [BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer](https://arxiv.org/abs/1904.06690) |
+| 14  | 2023.6.25 | 이권동                 | [BERT4Rec](https://www.notion.so/chanrankim/BERT4Rec-62a7124085be40d8864f6c6033525c94?pvs=4)                                                       | [BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer](https://arxiv.org/abs/1904.06690) |
 
 
 
