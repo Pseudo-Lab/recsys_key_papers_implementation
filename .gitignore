@@ -9,3 +9,5 @@ SASRec/wandb/*
 venv/
 
 */.ipynb_checkpoints
+
+.env

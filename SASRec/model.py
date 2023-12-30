@@ -63,13 +63,13 @@ class SASRec(torch.nn.Module):
             # self.neg_sigmoid = torch.nn.Sigmoid()
 
     def log2feats(self, log_seqs):
-        seqs = self.item_emb(torch.LongTensor(log_seqs).to(self.dev))
+        seqs = self.item_emb(torch.tensor(log_seqs, dtype=torch.long))
         seqs *= self.item_emb.embedding_dim ** 0.5
         positions = np.tile(np.array(range(log_seqs.shape[1])), [log_seqs.shape[0], 1])
-        seqs += self.pos_emb(torch.LongTensor(positions).to(self.dev))
+        seqs += self.pos_emb(torch.LongTensor(positions))
         seqs = self.emb_dropout(seqs)
 
-        timeline_mask = torch.BoolTensor(log_seqs == 0).to(self.dev)
+        timeline_mask = torch.BoolTensor(log_seqs == 0)
         seqs *= ~timeline_mask.unsqueeze(-1)  # broadcast in last dim
 
         tl = seqs.shape[1]  # time dim len for enforce causality

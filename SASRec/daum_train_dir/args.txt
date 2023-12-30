@@ -1,0 +1,16 @@
+batch_size,128
+dataset,daum
+device,cpu
+dropout_rate,0.5
+hidden_units,50
+inference_only,False
+l2_emb,0.0
+lr,0.001
+maxlen,50
+model_output_dir,model_output
+num_blocks,2
+num_epochs,200
+num_heads,1
+ratings_dir,../data/ml-1m_grouplens/ratings.dat
+state_dict_path,None
+train_dir,train_dir
