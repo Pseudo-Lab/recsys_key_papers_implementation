@@ -11,3 +11,5 @@ venv/
 */.ipynb_checkpoints
 
 .env
+
+*.pth
