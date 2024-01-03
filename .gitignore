@@ -5,6 +5,7 @@ __pycache__/
 
 SASRec/sasrec_model/*
 SASRec/wandb/*
+SASRec/daum_train_dir/*
 
 venv/
 
