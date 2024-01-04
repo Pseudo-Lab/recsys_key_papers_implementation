@@ -1,6 +1,6 @@
 batch_size,128
 dataset,daum
-device,cpu
+device,cuda
 dropout_rate,0.5
 hidden_units,50
 inference_only,False
